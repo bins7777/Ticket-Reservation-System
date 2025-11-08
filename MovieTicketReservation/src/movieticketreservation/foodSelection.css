@@ -1,0 +1,179 @@
+.root {
+    -fx-background-color: #f9f9fb;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.nav-button {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 22;
+    -fx-padding: 6 18;
+}
+
+.window-control {
+    -fx-background-color: transparent;
+    -fx-border-color: #c5c6cb;
+    -fx-border-radius: 4;
+    -fx-text-fill: #424242;
+}
+
+.page-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #d50000;
+    -fx-alignment: center;
+    -fx-letter-spacing: 1.4px;
+}
+
+.movie-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #212121;
+}
+
+.showtime-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #616161;
+}
+
+.menu-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 24;
+    -fx-background-radius: 24;
+}
+
+.menu-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.food-card {
+    -fx-pref-width: 160px;
+    -fx-pref-height: 190px;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f5f5f5);
+    -fx-border-color: rgba(213, 0, 0, 0.15);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-padding: 12;
+    -fx-spacing: 8;
+    -fx-alignment: CENTER;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 8, 0, 0, 4);
+}
+
+.food-card .food-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f2f2f;
+    -fx-text-alignment: center;
+}
+
+.food-card .price-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #424242;
+}
+
+.quantity-bar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: rgba(213, 0, 0, 0.2);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 4 8;
+    -fx-spacing: 6;
+}
+
+.quantity-button {
+    -fx-background-color: #d50000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 28px;
+    -fx-pref-height: 26px;
+    -fx-background-radius: 10;
+}
+
+.quantity-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+.quantity-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #212121;
+    -fx-min-width: 28px;
+    -fx-alignment: center;
+}
+
+.food-image {
+    -fx-fit-height: 70px;
+    -fx-fit-width: 110px;
+    -fx-preserve-ratio: true;
+}
+
+.cart-pane {
+    -fx-background-color: linear-gradient(to bottom, #ffebee, #ffcdd2);
+    -fx-background-radius: 26;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 10, 0, 0, 6);
+    -fx-padding: 18;
+}
+
+.cart-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #b71c1c;
+}
+
+.cart-items .cart-entry {
+    -fx-background-color: rgba(255,255,255,0.95);
+    -fx-background-radius: 14;
+    -fx-padding: 8 12;
+    -fx-spacing: 6;
+    -fx-border-color: rgba(213, 0, 0, 0.2);
+    -fx-border-radius: 14;
+}
+
+.cart-entry-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2f2f2f;
+}
+
+.cart-entry-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+}
+
+.cart-entry-amount {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #b71c1c;
+}
+
+.divider {
+    -fx-background-color: rgba(183, 28, 28, 0.35);
+}
+
+.total-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #b71c1c;
+}
+
+.total-amount {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #b71c1c;
+}
+
+.primary-button {
+    -fx-background-color: #d50000;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 22;
+    -fx-effect: dropshadow(three-pass-box, rgba(213, 0, 0, 0.35), 12, 0, 0, 4);
+}
+
+.primary-button:disabled {
+    -fx-opacity: 0.6;
+}

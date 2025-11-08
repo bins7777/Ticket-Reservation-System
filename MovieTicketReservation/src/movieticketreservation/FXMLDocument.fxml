@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="608.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movieticketreservation.FXMLDocumentController">
+
+   <children>
+
+      <!-- LOGIN FORM -->
+      <AnchorPane fx:id="logIn" prefHeight="608.0" prefWidth="909.0" styleClass="bg-form" stylesheets="@designLogin.css">
+         <children>
+            <!-- Close / Minimize -->
+            <Button fx:id="logIn_close" layoutX="859.0" layoutY="2.0" prefHeight="24.0" prefWidth="50.0" styleClass="close" text="×" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font></Button>
+            <Button fx:id="logIn_minimize" layoutX="807.0" layoutY="2.0" prefHeight="24.0" prefWidth="50.0" styleClass="close" text="−" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font></Button>
+
+            <!-- Login Box -->
+            <AnchorPane layoutX="271.0" layoutY="178.0" prefHeight="252.0" prefWidth="368.0" styleClass="bg-outline">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="236.0" prefWidth="352.0" styleClass="bg-inner">
+                     <children>
+                        <Label alignment="CENTER" layoutY="14.0" prefHeight="68.0" prefWidth="352.0" text="Log In" textAlignment="CENTER" textFill="WHITE">
+                           <font><Font name="Copperplate Gothic Light" size="60.0" /></font>
+                        </Label>
+
+                        <TextField fx:id="logIn_username" layoutX="46.0" layoutY="99.0" prefHeight="25.0" prefWidth="261.0" promptText="Username" />
+                        <PasswordField fx:id="logIn_password" layoutX="46.0" layoutY="133.0" prefHeight="25.0" prefWidth="261.0" promptText="Password" />
+
+                        <Button fx:id="logIn_button" layoutX="145.0" layoutY="172.0" prefHeight="25.0" prefWidth="63.0" styleClass="login-btn" text="Log In">
+                           <font><Font name="Arial Rounded MT Bold" size="12.0" /></font>
+                        </Button>
+
+                        <Hyperlink fx:id="logIn_createNewAccount" layoutX="114.0" layoutY="202.0" text="Create a new Account" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+
+      <!-- SIGNUP FORM -->
+      <AnchorPane fx:id="signUp" prefHeight="608.0" prefWidth="909.0" styleClass="bg-form" stylesheets="@designLogin.css">
+         <children>
+            <!-- Close / Minimize -->
+            <Button fx:id="signUp_close" layoutX="859.0" layoutY="2.0" prefHeight="24.0" prefWidth="50.0" styleClass="close" text="×" textFill="WHITE">
+            </Button>
+            <Button fx:id="signUp_minimize" layoutX="807.0" layoutY="2.0" prefHeight="24.0" prefWidth="50.0" styleClass="close" text="−" textFill="WHITE">
+            </Button>
+
+            <!-- Signup Box -->
+            <AnchorPane layoutX="271.0" layoutY="71.0" prefHeight="467.0" prefWidth="368.0" styleClass="bg-outline">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="452.0" prefWidth="352.0" styleClass="bg-inner">
+                     <children>
+                        <Label alignment="CENTER" layoutY="14.0" prefHeight="68.0" prefWidth="352.0" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+                           <font><Font name="Copperplate Gothic Light" size="60.0" /></font>
+                        </Label>
+
+                        <TextField fx:id="signUp_lastName" layoutX="46.0" layoutY="99.0" prefHeight="25.0" prefWidth="261.0" promptText="Last Name" />
+                        <TextField fx:id="signUp_firstName" layoutX="46.0" layoutY="138.0" prefHeight="25.0" prefWidth="261.0" promptText="First Name" />
+                        <TextField fx:id="signUp_email" layoutX="46.0" layoutY="179.0" prefHeight="25.0" prefWidth="261.0" promptText="Email Address" />
+                        <TextField fx:id="signUp_phone" layoutX="46.0" layoutY="219.0" prefHeight="25.0" prefWidth="261.0" promptText="Phone Number" />
+                        <TextField fx:id="signUp_username" layoutX="46.0" layoutY="259.0" prefHeight="25.0" prefWidth="261.0" promptText="Username" />
+                        <PasswordField fx:id="signUp_password" layoutX="46.0" layoutY="299.0" prefHeight="25.0" prefWidth="261.0" promptText="Password" />
+                        <PasswordField fx:id="signUp_confirmPassword" layoutX="46.0" layoutY="338.0" prefHeight="25.0" prefWidth="261.0" promptText="Confirm Password" />
+
+                        <Button fx:id="signUp_button" layoutX="139.0" layoutY="385.0" prefHeight="30.0" prefWidth="74.0" styleClass="login-btn" text="Sign Up">
+                           <font><Font name="Arial Rounded MT Bold" size="12.0" /></font>
+                        </Button>
+                        <Hyperlink fx:id="signUp_alreadyHaveAccount" layoutX="104.0" layoutY="415.0" text="Already have an account?" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+
+   </children>
+</AnchorPane>

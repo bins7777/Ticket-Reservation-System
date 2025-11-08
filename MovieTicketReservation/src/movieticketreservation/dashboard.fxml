@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="608.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movieticketreservation.DashboardController">
+   <children>
+      <Button fx:id="dashboard_close" layoutX="859.0" layoutY="2.0" onAction="#handleClose" prefHeight="24.0" prefWidth="50.0" styleClass="close" stylesheets="@designDashboard.css" text="X">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dashboard_minimize" alignment="CENTER" contentDisplay="CENTER" layoutX="809.0" layoutY="2.0" onAction="#handleMinimize" prefHeight="24.0" prefWidth="50.0" styleClass="close" stylesheets="@designDashboard.css" text="-">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
+      <AnchorPane prefHeight="608.0" prefWidth="257.0" styleClass="bg-form" stylesheets="@designLogin.css">
+         <children>
+            <AnchorPane layoutX="29.0" layoutY="30.0" opacity="0.2" prefHeight="193.0" prefWidth="200.0" styleClass="prof-back" stylesheets="@designDashboard.css" />
+            <Button fx:id="dashboard_button" layoutX="21.0" layoutY="297.0" mnemonicParsing="false" onAction="#showDashboard" prefHeight="40.0" prefWidth="216.0" styleClass="login-btn" stylesheets="@designDashboard.css" text="Dashboard">
+               <font>
+                  <Font name="Bell MT" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard_movieList" layoutX="21.0" layoutY="357.0" mnemonicParsing="false" onAction="#showMovieList" prefHeight="40.0" prefWidth="216.0" styleClass="login-btn" stylesheets="@designDashboard.css" text="Movie List">
+               <font>
+                  <Font name="Bell MT" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard_myReservations" layoutX="21.0" layoutY="417.0" mnemonicParsing="false" onAction="#showReservations" prefHeight="40.0" prefWidth="216.0" styleClass="login-btn" stylesheets="@designDashboard.css" text="My Reservations">
+               <font>
+                  <Font name="Bell MT" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard_paymentCheckout" layoutX="21.0" layoutY="477.0" mnemonicParsing="false" onAction="#showPayment" prefHeight="40.0" prefWidth="216.0" styleClass="login-btn" stylesheets="@designDashboard.css" text="Payment/Checkout">
+               <font>
+                  <Font name="Bell MT" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard_logout" alignment="CENTER" layoutX="21.0" layoutY="562.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="22.0" prefWidth="82.0" styleClass="logout-button" stylesheets="@designDashboard.css" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Text" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashboard_settings" layoutX="205.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettings" prefHeight="34.0" prefWidth="34.0" styleClass="settings-icon" stylesheets="@designDashboard.css" text="⚙" textFill="WHITE" />
+            <Text fill="WHITE" layoutX="69.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome User!">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="dashboardSummaryPane" layoutX="258.0" layoutY="32.0" prefHeight="576.0" prefWidth="651.0">
+         <children>
+            <AnchorPane prefHeight="207.0" prefWidth="293.0" styleClass="bg-ticketCount" stylesheets="@designDashboard.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="14.0">
+               <children>
+                  <Text fill="WHITE" layoutX="37.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Reserved Tickets" textAlignment="CENTER" wrappingWidth="220.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="31.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="totalReservedTicketsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="78.0" prefHeight="70.0" prefWidth="90.0" styleClass="ticket-total-value" text="0" />
+               </children>
+            </AnchorPane>
+            <VBox layoutX="333.0" layoutY="14.0" prefHeight="498.0" prefWidth="268.0" spacing="10.0">
+               <children>
+                  <VBox maxWidth="320.0" prefHeight="488.0" prefWidth="258.0" spacing="4.0" styleClass="highlight-card" stylesheets="@designDashboard.css">
+                     <children>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" styleClass="highlight-title" text="Now Showing" />
+                        <Label fx:id="highlightMoviesCount" styleClass="highlight-value" text="0" />
+                        <AnchorPane prefHeight="300.0" prefWidth="220.0" styleClass="bg-shadow" stylesheets="@designDashboard.css">
+                           <children>
+                              <ImageView fx:id="carouselImage" fitHeight="260.0" fitWidth="210.0" layoutX="45.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="20.0" />
+                           </children>
+                        </AnchorPane>
+                        <VBox maxWidth="320.0" prefHeight="81.0" prefWidth="250.0" spacing="4.0" styleClass="highlight-card" stylesheets="@designDashboard.css">
+                           <children>
+                              <Label styleClass="highlight-title" text="Seat Preference" />
+                              <Label fx:id="highlightAutoPickStatus" styleClass="highlight-value" text="Auto-pick OFF" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="movieListPane" layoutX="257.0" layoutY="32.0" prefHeight="576.0" prefWidth="651.0" visible="false">
+         <children>
+            <Text fill="#9e0689" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Now Showing" textAlignment="CENTER" wrappingWidth="428.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="62.0" />
+               </font>
+            </Text>
+            <ScrollPane fx:id="movieScrollPane" fitToWidth="true" layoutX="29.0" layoutY="109.0" prefHeight="447.0" prefWidth="594.0" styleClass="bg-shadow" stylesheets="@designDashboard.css">
+               <content>
+                  <FlowPane fx:id="movieCardContainer" alignment="TOP_CENTER" hgap="24.0" styleClass="movie-card-container" vgap="24.0">
+                     <padding>
+                        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+            <TextField fx:id="movieList_searchMovie" layoutX="39.0" layoutY="78.0" prefHeight="25.0" prefWidth="350.0" promptText="Search Movie" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="reservationsPane" layoutX="258.0" layoutY="31.0" prefHeight="569.0" prefWidth="651.0" visible="false">
+         <children>
+            <TableView fx:id="reservationsTable" layoutX="29.0" prefHeight="542.0" prefWidth="594.0">
+              <columns>
+                <TableColumn fx:id="reservationTable_lastName" prefWidth="110.0" text="Last Name" />
+                <TableColumn fx:id="reservationTable_firstName" minWidth="6.0" prefWidth="120.0" text="First Name" />
+                  <TableColumn fx:id="reservationTable_movieName" minWidth="6.0" prefWidth="180.0" text="Movie" />
+                  <TableColumn fx:id="reservationTable_date" minWidth="0.0" prefWidth="110.0" text="Date" />
+                  <TableColumn fx:id="reservationTable_time" minWidth="6.0" prefWidth="90.0" text="Time" />
+                  <TableColumn fx:id="reservationTable_seat" minWidth="6.0" prefWidth="80.0" text="Seat(s)" />
+                  <TableColumn fx:id="reservationTable_action" prefWidth="90.0" text="Details" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paymentPane" layoutX="258.0" layoutY="31.0" prefHeight="569.0" prefWidth="651.0" visible="false">
+         <children>
+            <VBox alignment="TOP_LEFT" fillWidth="true" spacing="12.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="24.0">
+               <children>
+                  <Label fx:id="paymentTitleLabel" styleClass="title-label" text="Select Payment Method">
+                     <font>
+                        <Font name="Berlin Sans FB" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="paymentSubtitleLabel" styleClass="subtitle-label" text="Review your selection and choose a payment channel." wrapText="true" />
+                  <AnchorPane prefWidth="603.0" styleClass="bg-shadow" VBox.vgrow="NEVER">
+                     <children>
+                        <VBox layoutX="24.0" layoutY="24.0" prefWidth="555.0" spacing="12.0">
+                           <children>
+                              <Label fx:id="paymentMovieDetailsLabel" styleClass="movie-title" text="Movie and schedule summary" wrapText="true" />
+                              <Label fx:id="paymentSeatsLabel" styleClass="showtime-label" text="Seats: -" wrapText="true" />
+                              <HBox alignment="CENTER_LEFT" spacing="16.0">
+                                 <children>
+                                   <VBox spacing="4.0">
+                                       <children>
+                                          <Label styleClass="cart-entry-title" text="Ticket Price" />
+                                          <Label fx:id="paymentTicketPriceLabel" styleClass="cart-entry-amount" text="â‚± 0.00" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="4.0">
+                                       <children>
+                                          <Label styleClass="cart-entry-title" text="Quantity" />
+                                          <Label fx:id="paymentTicketQuantityLabel" styleClass="cart-entry-amount" text="Ã—0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label styleClass="cart-title" text="Others" />
+                              <VBox fx:id="paymentFoodItemsBox" spacing="4.0">
+                                 <children>
+                                    <Label fx:id="paymentNoAddonsLabel" styleClass="cart-entry-meta" text="No food items selected." wrapText="true" />
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <children>
+                                   <Label styleClass="total-label" text="Total Amount" />
+                                    <Label fx:id="paymentTotalAmountLabel" styleClass="total-amount" text="â‚± 0.00" />
+                                </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <Label styleClass="legend-row" text="Pick a payment partner:" />
+                  <FlowPane fx:id="paymentMethodsFlow" hgap="12.0" prefWrapLength="580.0" vgap="12.0">
+                     <children>
+                        <ToggleButton fx:id="paymentMethodGcash" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="GCash&#10;Wallet" />
+                        <ToggleButton fx:id="paymentMethodSmartBanq" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="Smart/Sun&#10;Bank Payment" />
+                        <ToggleButton fx:id="paymentMethodMaya" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="Maya&#10;Wallet" />
+                        <ToggleButton fx:id="paymentMethodGrabPay" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="GrabPay&#10;Wallet" />
+                        <ToggleButton fx:id="paymentMethodCoins" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="Coins.ph&#10;Wallet" />
+                        <ToggleButton fx:id="paymentMethodSevenEleven" mnemonicParsing="false" prefHeight="64.0" prefWidth="160.0" text="7-Eleven&#10;Counter Payment" />
+                     </children>
+                  </FlowPane>
+                  <Label fx:id="paymentEmptyStateLabel" managed="false" styleClass="selection-summary" text="Select seats and concessions to generate a checkout summary." visible="false" wrapText="true" />
+                  <Button fx:id="paymentConfirmButton" disable="true" mnemonicParsing="false" onAction="#handleConfirmPayment" prefHeight="48.0" prefWidth="220.0" styleClass="primary-button" text="Confirm Payment" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsPane" layoutX="258.0" layoutY="32.0" prefHeight="576.0" prefWidth="651.0" visible="false">
+         <children>
+            <VBox alignment="TOP_LEFT" spacing="14.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Settings">
+                     <font>
+                        <Font name="Berlin Sans FB" size="32.0" />
+                     </font>
+                  </Text>
+                  <Label text="Update your contact details and default seat preference." wrapText="true" />
+                  <TextField fx:id="settingsFullNameField" promptText="Full name" />
+                  <TextField fx:id="settingsEmailField" promptText="Email address" />
+                  <TextField fx:id="settingsPhoneField" promptText="Phone number" />
+                  <ToggleButton fx:id="settingsAutoPickToggle" mnemonicParsing="false" text="Auto pick best seat: OFF" />
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <Button fx:id="settingsSaveButton" mnemonicParsing="false" onAction="#handleSaveSettings" prefHeight="44.0" prefWidth="180.0" styleClass="primary-button" text="Save Changes" />
+                        <Label fx:id="settingsStatusLabel" styleClass="selection-summary" text="" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
+

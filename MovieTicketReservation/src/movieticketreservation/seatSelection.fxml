@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="620.0" prefWidth="900.0" stylesheets="@seatSelection.css"
+            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="movieticketreservation.SeatSelectionController">
+   <children>
+      <Button layoutX="20.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleBack"
+              prefHeight="32.0" prefWidth="100.0" styleClass="nav-button" text="Back" />
+      <Button layoutX="820.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleMinimize"
+              prefHeight="24.0" prefWidth="36.0" styleClass="window-control" text="-" />
+      <Button layoutX="860.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClose"
+              prefHeight="24.0" prefWidth="36.0" styleClass="window-control" text="X" />
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                  layoutX="20.0" layoutY="70.0" prefHeight="520.0" prefWidth="860.0"
+                  AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+                  AnchorPane.topAnchor="70.0" AnchorPane.bottomAnchor="20.0"
+                  styleClass="seat-scroll">
+         <content>
+            <VBox alignment="TOP_CENTER" prefWidth="820.0" spacing="18.0">
+               <children>
+                  <Label fx:id="movieTitleText" alignment="CENTER" maxWidth="Infinity" styleClass="title-label"
+                         text="Movie Title" />
+                  <Label fx:id="showtimeDetailsText" alignment="CENTER" maxWidth="Infinity"
+                         styleClass="subtitle-label" text="Branch - Date - Time" wrapText="true" />
+                  <Label fx:id="availableSeatsLabel" alignment="CENTER" maxWidth="Infinity"
+                         styleClass="availability-label" text="Available seats: 0" />
+                  <VBox alignment="TOP_CENTER" prefWidth="740.0" spacing="12.0" styleClass="seat-area">
+                     <children>
+                        <Label alignment="CENTER" maxWidth="Infinity" styleClass="screen-label"
+                               text="SCREEN" />
+                        <GridPane fx:id="seatGrid" alignment="CENTER" hgap="6.0" vgap="6.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="12.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER" spacing="24.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="12.0" styleClass="ticket-counter">
+                           <children>
+                              <Label text="Tickets" />
+                              <Button fx:id="decrementButton" mnemonicParsing="false" onAction="#decrementTicketCount"
+                                      prefHeight="32.0" prefWidth="32.0" styleClass="ticket-step" text="-" />
+                              <Label fx:id="ticketCountLabel" alignment="CENTER" minWidth="40.0"
+                                     styleClass="ticket-count" text="1" />
+                              <Button fx:id="incrementButton" mnemonicParsing="false" onAction="#incrementTicketCount"
+                                      prefHeight="32.0" prefWidth="32.0" styleClass="ticket-step" text="+" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="selectedSeatsLabel" alignment="CENTER" maxWidth="Infinity"
+                               styleClass="selection-summary" text="Selected: None" wrapText="true" />
+                        <ToggleButton fx:id="autoPickToggle" mnemonicParsing="false" text="Auto pick best seats" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="24.0" styleClass="legend-row">
+                     <children>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <Region prefHeight="18.0" prefWidth="18.0" styleClass="legend-box selected" />
+                              <Label text="Selected Seat" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <Region prefHeight="18.0" prefWidth="18.0" styleClass="legend-box available" />
+                              <Label text="Available" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <Region prefHeight="18.0" prefWidth="18.0" styleClass="legend-box sold" />
+                              <Label text="Sold" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefWidth="740.0" spacing="16.0">
+                     <children>
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNext"
+                                prefHeight="44.0" prefWidth="160.0" styleClass="secondary-button" text="Next" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="confirmButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleConfirm"
+                                prefHeight="44.0" prefWidth="240.0" styleClass="primary-button" text="Confirm Selection" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="40.0" left="10.0" right="10.0" top="0.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

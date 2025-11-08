@@ -1,0 +1,11 @@
+# Build outputs and IDE caches
+MovieTicketReservation/bin/
+MovieTicketReservation/build/
+MovieTicketReservation/dist/
+
+# NetBeans user-specific data
+MovieTicketReservation/nbproject/private/
+
+# OS artifacts
+Thumbs.db
+*.DS_Store

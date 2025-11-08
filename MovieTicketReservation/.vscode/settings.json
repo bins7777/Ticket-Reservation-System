@@ -1,0 +1,14 @@
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-25",
+      "path": "C:/Program Files/Java/jdk-25",
+      "default": true
+    }
+  ],
+  "java.project.sourcePaths": ["src"],
+  "java.project.referencedLibraries": [
+    "${workspaceFolder}/lib/*.jar",
+    "${workspaceFolder}/lib/javafx-sdk-23.0.1/lib/*.jar"
+  ]
+}
